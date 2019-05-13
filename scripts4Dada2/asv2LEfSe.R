@@ -1,4 +1,4 @@
-asv2LEfSe <- function(ps.data){
+asv2LEfSe <- function(ps.data, metalvl1=NA, metalvl2=NA){
   ################################################################
   # Convert ASV embeded in phyloseq object to LEfSe table format #
   #       Developped By Rémi Maglione For Kembel Lab             #
@@ -18,7 +18,7 @@ asv2LEfSe <- function(ps.data){
   tax_asv <- tax_asv[,-1]
   
   # Extract meta data
-  meta <- t(ps.data@sam_data[,c("ech", "traitement")])
+  meta <- t(ps.data@sam_data[,c(metalvl1, metalvl2)])
   
   # Join meta and tax_asv
   final_table <- rbind(meta, tax_asv)
