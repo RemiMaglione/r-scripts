@@ -1,3 +1,8 @@
+################################################################
+#         Taxonomic annotation of pure bacterial sample        #
+#                from ASV embed in phyloseq object             #
+#          Developped By Rémi Maglione For Kembel Lab          #
+################################################################
 strain2sample <- function(strain.ps=NA, sample.ps=NA, strain=NA, rank=NA, sampleColumn=NA){
   strain.row <- which(strain.ps@tax_table@.Data[,sampleColumn]%in%strain)
   strain.seq <- rownames(strain.ps@tax_table@.Data[strain.row,])
