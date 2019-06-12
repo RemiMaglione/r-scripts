@@ -1,3 +1,4 @@
+# Remove Seq name without sequence
 fasta=NA
 j=1
 for (i in 1:length(rownames(Myfasta))) {
@@ -8,15 +9,15 @@ for (i in 1:length(rownames(Myfasta))) {
          j=j+2
          })
 }
-
 fasta<-data.frame(fasta)
 fasta$fasta <- as.character(fasta$fasta)
 
+# Split Sequence name and sequence
+### Sequence under 50 nucleotids will be output in another data
 j=1
 k=1
 sample.less50nts=NA
 seq.less50nts=NA
-
 sample=NA
 seq=NA
 
@@ -35,8 +36,10 @@ for (i in 1:length(rownames(fasta))) {
          no = NA)
 }
 
+# Recover data with sample names and their related sequence (future dev)
 fasta.key <- data.frame(sample=sample, seq=seq)
 fasta.less50nts.key <- data.frame(sample=sample.less50nts, seq=seq.less50nts)
 
+# Build the fake seq.tab (ASV)
 seq.tab.fake <- t(data.frame(matrix(0, nrow = length(seq[!duplicated(seq)]), ncol = 1), row.names = seq[!duplicated(seq)]))
 rownames(seq.tab.fake) <- "fake"
