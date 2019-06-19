@@ -1,7 +1,7 @@
 #####################################################
 #   Find match between LEfSe and a taxonomic table  #
 #    Add a column to the taxonomic table with :     #
-#        'Yes'/match or 'no'/no-match               #
+#        'Yes'/match or 'No'/no-match               #
 #    Developped by Rémi Maglione For kembel Lab     #
 #####################################################
 taxoMatch <-  function(mock.table=mock.table, lda.table=lda.table, colname.match = "match"){
