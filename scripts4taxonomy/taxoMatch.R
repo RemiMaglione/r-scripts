@@ -11,11 +11,12 @@ taxoMatch <-  function(mock.table=mock.table, lda.table=lda.table, colname.match
              test = !is.na(unlist(strsplit(mock.table$species[i],"/"))),
              yes = ifelse(
                test = unlist(strsplit(mock.table$species[i],"/"))%in%unlist(strsplit(lda.table$species[which(lda.table$Genus==mock.table$Genus[i])],"_")),
-               yes = mock.table[i, colname.match] <- "Yes",
-               no = mock.table[i, colname.match] <- "No"),
+               yes = mock.table[i, colname.match] <- "Oui",
+               no = mock.table[i, colname.match] <- "Non"),
              
-             no = mock.table[i, colname.match] <- "No"),
+             no = mock.table[i, colname.match] <- "Non"),
            
-           no = mock.table[i, colname.match] <- "No")
+           no = mock.table[i, colname.match] <- "Non")
     }
+  return(mock.table)
 }
