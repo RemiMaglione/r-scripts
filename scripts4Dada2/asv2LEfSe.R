@@ -22,7 +22,6 @@ asv2LEfSe2 <- function(ps.data, subject=NA, class=NA, subclass=NA){
          yes = meta <- t(ps.data@sam_data[,c(subject, class, subclass)]),
          no = meta <- t(ps.data@sam_data[,c(subject, class)]))
   
-  
   # Join meta and tax_asv
   final_table <- rbind(meta, tax_asv)
   return(final_table)
