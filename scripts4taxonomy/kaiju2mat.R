@@ -20,5 +20,7 @@ kaiju2mat <- function(table.taxo) {
            return(x.tmp)
            })
     }, mc.cores = cores-1)), ncol = 7, byrow = TRUE)
+  mat <- cbind(as.matrix(table.taxo[,2]), mat)
+  colnames(mat) <- c("seqname", "superkingdom","phylum","class","order","family","genus","species")
   return(mat)
   }
