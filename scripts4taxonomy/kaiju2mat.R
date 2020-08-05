@@ -2,7 +2,7 @@
 # R script to convert 'kaiju-addTaxonNames' output to a proper R matrix where only remain the sequence name and the full taxonomic path in individual column
 # 'kaiju-addTaxonNames' output has to be yield by the following cmd : 
 # kaiju-addTaxonNames -t nodes.dmp -n names.dmp -i kaiju.out -o kaiju.names.out -r superkingdom,phylum,class,order,family,genus,species
-# Working r input: table.taxo <- read.table(file = "kaiju.names.out", sep = "\t", fill = TRUE, row.names = NULL, header = FALSE) 
+# Working r input: table.taxo <- read.table(file = "kaiju.names.out", sep = "\t", fill = TRUE, row.names = NULL, header = FALSE, quote = "") 
 ###########Codded by Rémi Maglione for Kembel Lab###########
 
 require(parallel)
