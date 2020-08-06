@@ -2,6 +2,7 @@
 args = commandArgs(trailingOnly=TRUE)
 parallel=TRUE
 
+#Input control
 if (length(args)==0) {
   stop("At least one argument must be supplied (input kaiju file).n", call.=FALSE)
 } else if (length(args)==1) {
@@ -11,6 +12,9 @@ if (length(args)==0) {
   # default output file
   parallel = args[3]
 }
+
+#Parallel package install control
+if (!require("parallel")) install.packages("parallel")
 
 kaiju2mat <- function(kaiju.names, parallel) {
   require(parallel)
