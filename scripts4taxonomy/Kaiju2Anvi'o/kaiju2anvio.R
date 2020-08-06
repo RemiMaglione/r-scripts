@@ -9,7 +9,6 @@ if (length(args)==0) {
   # default output file
   args[2] = "kaiju2Anvio-fixed.names"
 } else if (length(args)==3) {
-  # default output file
   parallel = args[3]
 }
 
