@@ -1,6 +1,6 @@
 This R script was build as a 'rustine' to overcome format issue between kaiju 1.7.3 and Anvi'o 6.2
 
-kaiju2anvio will yeild a tab separated taxonomic file with column #1 sheltering the sequence name and column #2 to #8 filled with 'superkingdom,phylum,order,class,family,genus,species' as requested by Anvi'o 6.2 
+kaiju2anvio will yeild a tab separated taxonomic file with column #1 sheltering the sequence name and column #2 to #8 filled with 'superkingdom phylum order class family genus species' as requested by Anvi'o 6.2 
 
 You have to feed this little *** with the file yielded by the kaiju command : 
 
