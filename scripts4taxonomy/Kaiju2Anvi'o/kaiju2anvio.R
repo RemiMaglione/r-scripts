@@ -36,11 +36,11 @@ kaiju2mat <- function(kaiju.names, parallel) {
            })
   }, mc.cores = cores)), ncol = 7, byrow = TRUE)
   mat <- cbind(as.matrix(kaiju.names[,2]), mat)
-  colnames(mat) <- c("seqname", "superkingdom","phylum","class","order","family","genus","species")
+  colnames(mat) <- c("gene_callers_id","t_domain","t_phylum","t_class","t_order","t_family","t_genus","t_species")
   return(mat)
 }
 
 kaiju.names <- read.table(file = args[1], sep = "\t", fill = TRUE, row.names = NULL, header = FALSE, quote = "")
 kaijumat<-kaiju2mat(kaiju.names=kaiju.names, parallel = parallel)
-write.table(kaijumat, file = args[2], quote = FALSE, col.names = FALSE, row.names = FALSE)
+write.table(kaijumat, file = args[2], quote = FALSE, col.names = TRUE, row.names = FALSE)
 
