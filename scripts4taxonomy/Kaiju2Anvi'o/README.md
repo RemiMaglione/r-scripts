@@ -2,9 +2,13 @@ This R script was build as a 'rustine' to overcome format issue between kaiju 1.
 
 kaiju2anvio will yeild a tab separated taxonomic file with column #1 sheltering the sequence name and column #2 to #8 filled with 'superkingdom phylum order class family genus species' as requested by Anvi'o 6.2 
 
-You have to feed this little *** with the file yielded by the kaiju command : 
+You have to feed this rustine with the file yielded by the kaiju command : 
 
 `addTaxonNames -t /path/to/nodes.dmp -n /path/to/names.dmp -i gene_calls_nr.out -o gene_calls_nr.names -r superkingdom,phylum,order,class,family,genus,species`
+
+After creating the kaiju fixed-matrix, you're ready for the Anvi'o import:
+
+`anvi-import-taxonomy-for-genes -c CONTIGS.db -i kaiju2Anvio-fixed.names -p default_matrix`
 
 # USAGE
 ### Basic
