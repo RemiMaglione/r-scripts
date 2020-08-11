@@ -9,7 +9,7 @@
 if (!require("parallel")) install.packages("parallel")
 
 #Function
-kaiju2mat <- function(table.taxo, parallel) {
+kaiju2mat <- function(table.taxo, parallel=TRUE) {
   require(parallel)
   ifelse(test = isTRUE(parallel),
          yes = {
