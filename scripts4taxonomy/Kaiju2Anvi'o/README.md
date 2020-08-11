@@ -6,7 +6,7 @@ You have to feed this rustine with the file yielded by the following kaiju comma
 
 `addTaxonNames -t /path/to/nodes.dmp -n /path/to/names.dmp -i gene_calls_nr.out -o gene_calls_nr.names -r superkingdom,phylum,order,class,family,genus,species`
 
-After creating the kaiju fixed-matrix, you're ready for the Anvi'o import:
+After creating the kaiju fixed-matrix, you're ready for the Anvi'o import with the <b>'default_matrix'</b> parameter: 
 
 `anvi-import-taxonomy-for-genes -c CONTIGS.db -i kaiju2Anvio-fixed.names -p default_matrix`
 
