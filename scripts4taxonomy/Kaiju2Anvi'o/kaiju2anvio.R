@@ -15,6 +15,7 @@ if (length(args)==0) {
 #Parallel package install control
 if (!require("parallel")) install.packages("parallel")
 
+#Function
 kaiju2mat <- function(kaiju.names, parallel) {
   require(parallel)
   ifelse(test = isTRUE(parallel),
@@ -40,6 +41,7 @@ kaiju2mat <- function(kaiju.names, parallel) {
   return(mat)
 }
 
+#__MAIN__
 kaiju.names <- read.table(file = args[1], sep = "\t", fill = TRUE, row.names = NULL, header = FALSE, quote = "")
 kaijumat<-kaiju2mat(kaiju.names=kaiju.names, parallel = parallel)
 write.table(kaijumat, file = args[2], quote = FALSE, col.names = TRUE, row.names = FALSE)
