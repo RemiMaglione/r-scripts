@@ -3,6 +3,8 @@
 # Developped by Rémi Maglione For kembel Lab  #
 ###############################################
 seqList2fasta <- function(seq, file="ASV.fasta", write2file=TRUE, repName=FALSE) { 
+  fasta<-NA #create an empty vector
+  j=1 #1rst line to append seq in the vetor
   ifelse(isTRUE(repName),
          yes = {for (i in 1:length(seq)) { #iterate on seq
            #As fasta standard format is split in 3 lines per sequence like "names, seq, blank line": 
