@@ -1,3 +1,8 @@
+###############################################
+#       Create Fake ASV from fasta file       #
+# Developped by Rémi Maglione For kembel Lab  #
+###############################################
+
 fasta2FakeASV2 <- function(MyFastaPath){
   require(Biostrings)
   MyFasta <- readDNAStringSet(filepath = MyFastaPath)
