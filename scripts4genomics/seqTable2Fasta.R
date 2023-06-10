@@ -1,3 +1,8 @@
+###############################################
+#   Convert sequences table to .fasta format  #
+# Developped by Rémi Maglione For kembel Lab  #
+###############################################
+
 require(Biostrings)
 
 convertTableToFasta <- function(sequence_table, output_file) {
