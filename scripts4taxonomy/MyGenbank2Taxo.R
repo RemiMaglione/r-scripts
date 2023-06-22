@@ -1,15 +1,16 @@
 MyGenbank2Taxo <- function(genbankIDList, max_retries=5){
+  require('taxize')
   # Initialize variables
   retry_count <- 0
   max_retries <- max_retries
   failed_queries <- vector("character", length(genbankIDList))
   result <- vector("list", length(genbankIDList))
-  Print("Querring NCBI Started")
+  print("Querring NCBI Started")
   for (i in seq_along(genbankIDList)) {
     # Check if the query failed previously
     if (i > retry_count) {
       # Retry the query
-      result[[i]] <- tryCatch(
+      query_result <- tryCatch(
         classification(genbank2uid(id = genbankIDList[i]), db = "ncbi"),
         error = function(e) {
           message(paste("Query", genbankIDList[i], "failed. Retrying..."))
@@ -19,7 +20,10 @@ MyGenbank2Taxo <- function(genbankIDList, max_retries=5){
       )
       
       # Check if the query was successful
-      if (!is.null(result[[i]])) {
+      if (!is.null(query_result)) {
+        # Process the successful result
+        result[[genbankIDList[i]]] <- query_result
+        
         # Reset the retry count
         retry_count <- 0
       } else {
@@ -38,6 +42,6 @@ MyGenbank2Taxo <- function(genbankIDList, max_retries=5){
     }
     # If the loop reaches this point, it means the iteration was skipped due to a failed query
   }
-  Print("Querring NCBI Done")  
+  print("Querring NCBI Done")  
   return(result)
 }
