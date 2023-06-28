@@ -21,7 +21,7 @@ MyGenbank2Taxo <- function(genbankIDList, max_retries=5){
       # Check if the query was successful
       if (!is.null(query_result)) {
         # Process the successful result
-        result[[genbankIDList[i]]] <- query_result
+        result[[genbankIDList[i]]] <- query_result[[1]]
         
         # Reset the failed query flag
         failed_queries[i] <- FALSE
