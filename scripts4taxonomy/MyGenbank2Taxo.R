@@ -2,7 +2,7 @@ MyGenbank2Taxo <- function(genbankIDList, max_retries=5){
   require('taxize')
   # Initialize variables
   max_retries <- max_retries
-  failed_queries <- vector("character", length(genbankIDList))
+  failed_queries <- rep(FALSE, length(genbankIDList))
   result <- list()  # Initialize an empty list
   print("Querring NCBI Started")
   for (i in seq_along(genbankIDList)) {
